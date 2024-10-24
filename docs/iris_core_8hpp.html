@@ -91,7 +91,6 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">IrisCore.hpp File Reference</div></div>
 </div><!--header-->
@@ -101,7 +100,6 @@ $(function(){ initResizable(false); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;unordered_set&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
@@ -111,13 +109,6 @@ $(function(){ initResizable(false); });
 </div>
 <p><a href="iris_core_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a7cfabf96ecdcc4a865ce5c7a91fa5ba0" id="r_a7cfabf96ecdcc4a865ce5c7a91fa5ba0"><td class="memItemLeft" align="right" valign="top"><a id="a7cfabf96ecdcc4a865ce5c7a91fa5ba0" name="a7cfabf96ecdcc4a865ce5c7a91fa5ba0"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Iris::Viewer</b> = std::shared_ptr &lt;class __INTERNAL__Viewer&gt;</td></tr>
-<tr class="memdesc:a7cfabf96ecdcc4a865ce5c7a91fa5ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The viewer the the primary control class that interfaces between external applications and their views, and the iris rendering system. It contains interface capabilities between external controllers, coordinates display presentations between external surfaces, and creates any user interface functionalities defined in user interface markup strctures. __INTERNAL__Viewer is internally defined and not externally exposed. <br /></td></tr>
-<tr class="separator:a7cfabf96ecdcc4a865ce5c7a91fa5ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5bb41b04082051936618b78f7d140871" id="r_a5bb41b04082051936618b78f7d140871"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bb41b04082051936618b78f7d140871">Iris::get_major_version</a> ()</td></tr>
@@ -129,60 +120,57 @@ Functions</h2></td></tr>
 <tr class="memitem:a90ea4e2f828a2a4309bfdfc3f45bd4c9" id="r_a90ea4e2f828a2a4309bfdfc3f45bd4c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90ea4e2f828a2a4309bfdfc3f45bd4c9">Iris::get_build_number</a> ()</td></tr>
 <tr class="memdesc:a90ea4e2f828a2a4309bfdfc3f45bd4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the build number of these binaries.  <br /></td></tr>
 <tr class="separator:a90ea4e2f828a2a4309bfdfc3f45bd4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4595892bbfee049c291156616c186098" id="r_a4595892bbfee049c291156616c186098"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4595892bbfee049c291156616c186098">Iris::create_viewer</a> (const <a class="el" href="struct_iris_1_1_viewer_create_info.html">ViewerCreateInfo</a> &amp;)</td></tr>
-<tr class="memdesc:a4595892bbfee049c291156616c186098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an Iris viewer instance.  <br /></td></tr>
-<tr class="separator:a4595892bbfee049c291156616c186098"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa026e83e47bb657497cf63490b61a7d" id="r_afa026e83e47bb657497cf63490b61a7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa026e83e47bb657497cf63490b61a7d">Iris::viewer_bind_external_surface</a> (const <a class="el" href="struct_iris_1_1_viewer_bind_external_surface_info.html">ViewerBindExternalSurfaceInfo</a> &amp;)</td></tr>
-<tr class="memdesc:afa026e83e47bb657497cf63490b61a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a viewer to an external surface controlled by the calling application.  <br /></td></tr>
-<tr class="separator:afa026e83e47bb657497cf63490b61a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc8a04a771c7a0d4fbe633b15557775b" id="r_abc8a04a771c7a0d4fbe633b15557775b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc8a04a771c7a0d4fbe633b15557775b">Iris::viewer_unbind_surface</a> (const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;viewer)</td></tr>
-<tr class="memdesc:abc8a04a771c7a0d4fbe633b15557775b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unbind the external drawing surface controlled by the calling application.  <br /></td></tr>
-<tr class="separator:abc8a04a771c7a0d4fbe633b15557775b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1ba978fd6aad72e233f6a2672859f8e" id="r_ad1ba978fd6aad72e233f6a2672859f8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1ba978fd6aad72e233f6a2672859f8e">Iris::viewer_window_resized</a> (const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;viewer)</td></tr>
-<tr class="memdesc:ad1ba978fd6aad72e233f6a2672859f8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform a viewer that the attached window was resized.  <br /></td></tr>
-<tr class="separator:ad1ba978fd6aad72e233f6a2672859f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64b63aabfed9b61035f7b7f888b56de3" id="r_a64b63aabfed9b61035f7b7f888b56de3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64b63aabfed9b61035f7b7f888b56de3">Iris::viewer_open_slide</a> (const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;viewer, const <a class="el" href="struct_iris_1_1_slide_open_info.html">SlideOpenInfo</a> &amp;info)</td></tr>
-<tr class="memdesc:a64b63aabfed9b61035f7b7f888b56de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and open a slide for viewing.  <br /></td></tr>
-<tr class="separator:a64b63aabfed9b61035f7b7f888b56de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af536fb9a9b867350a1931f7180e6e300" id="r_af536fb9a9b867350a1931f7180e6e300"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af536fb9a9b867350a1931f7180e6e300">Iris::viewer_open_slide</a> (const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;viewer, const Slide &amp;)</td></tr>
-<tr class="memdesc:af536fb9a9b867350a1931f7180e6e300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load and begin rendering the supplied active Iris Slide.  <br /></td></tr>
-<tr class="separator:af536fb9a9b867350a1931f7180e6e300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbc65c324aaa1471d68ac5c71a2cb198" id="r_adbc65c324aaa1471d68ac5c71a2cb198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbc65c324aaa1471d68ac5c71a2cb198">Iris::viewer_close_slide</a> (const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;viewer)</td></tr>
-<tr class="memdesc:adbc65c324aaa1471d68ac5c71a2cb198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the current slide being viewed by the viewer.  <br /></td></tr>
-<tr class="separator:adbc65c324aaa1471d68ac5c71a2cb198"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5f55ebb07f47fa9626cc6ac19f577f2" id="r_ae5f55ebb07f47fa9626cc6ac19f577f2"><td class="memItemLeft" align="right" valign="top">Slide&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5f55ebb07f47fa9626cc6ac19f577f2">Iris::viewer_get_active_slide</a> (const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;viewer)</td></tr>
-<tr class="memdesc:ae5f55ebb07f47fa9626cc6ac19f577f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current slide being viewed by the viewer. Returns a Slide nullptr on failure.  <br /></td></tr>
-<tr class="separator:ae5f55ebb07f47fa9626cc6ac19f577f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a223065643b0833535283dc28e36d28" id="r_a6a223065643b0833535283dc28e36d28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a223065643b0833535283dc28e36d28">Iris::viewer_engine_translate</a> (const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;viewer, const <a class="el" href="struct_iris_1_1_viewer_translate_scope.html">ViewerTranslateScope</a> &amp;) noexcept</td></tr>
-<tr class="memdesc:a6a223065643b0833535283dc28e36d28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate the scope view when rendering a whole slide image.  <br /></td></tr>
-<tr class="separator:a6a223065643b0833535283dc28e36d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae16b410a5fa7d0cf2209173d4f098405" id="r_ae16b410a5fa7d0cf2209173d4f098405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae16b410a5fa7d0cf2209173d4f098405">Iris::viewer_engine_zoom</a> (const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;viewer, const <a class="el" href="struct_iris_1_1_viewer_zoom_scope.html">ViewerZoomScope</a> &amp;) noexcept</td></tr>
-<tr class="memdesc:ae16b410a5fa7d0cf2209173d4f098405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the scope view amound when rending a whole slide image.  <br /></td></tr>
-<tr class="separator:ae16b410a5fa7d0cf2209173d4f098405"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68751a3c95d0a76a34a4719ec8681723" id="r_a68751a3c95d0a76a34a4719ec8681723"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68751a3c95d0a76a34a4719ec8681723">Iris::viewer_annotate_slide</a> (const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;viewer, const <a class="el" href="struct_iris_1_1_slide_annotation.html">SlideAnnotation</a> &amp;) noexcept</td></tr>
-<tr class="memdesc:a68751a3c95d0a76a34a4719ec8681723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert an image slide annotation into the current active slide at the location within the screen.  <br /></td></tr>
-<tr class="separator:a68751a3c95d0a76a34a4719ec8681723"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19d46070f84a1242547a549836c56413" id="r_a19d46070f84a1242547a549836c56413"><td class="memItemLeft" align="right" valign="top">Slide&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19d46070f84a1242547a549836c56413">Iris::create_slide</a> (const <a class="el" href="struct_iris_1_1_slide_open_info.html">SlideOpenInfo</a> &amp;info)</td></tr>
-<tr class="memdesc:a19d46070f84a1242547a549836c56413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an Iris::Slide object encapsulating access to a whole slide image object.  <br /></td></tr>
+<tr class="memitem:a873a2e0b411e964da5812745bb6a31ad" id="r_a873a2e0b411e964da5812745bb6a31ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a873a2e0b411e964da5812745bb6a31ad">Iris::create_viewer</a> (const <a class="el" href="struct_iris_1_1_viewer_create_info.html">ViewerCreateInfo</a> &amp;) noexcept</td></tr>
+<tr class="memdesc:a873a2e0b411e964da5812745bb6a31ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an Iris viewer instance.  <br /></td></tr>
+<tr class="separator:a873a2e0b411e964da5812745bb6a31ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d359dcbea415e4bd01dc39cd5a36429" id="r_a5d359dcbea415e4bd01dc39cd5a36429"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a25c2bd8a6f2445b1fd03387ea47c2b38">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d359dcbea415e4bd01dc39cd5a36429">Iris::viewer_bind_external_surface</a> (const <a class="el" href="struct_iris_1_1_viewer_bind_external_surface_info.html">ViewerBindExternalSurfaceInfo</a> &amp;) noexcept</td></tr>
+<tr class="memdesc:a5d359dcbea415e4bd01dc39cd5a36429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a viewer to an external surface controlled by the calling application.  <br /></td></tr>
+<tr class="separator:a5d359dcbea415e4bd01dc39cd5a36429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb07487f7771d86a4ed4251489352c69" id="r_acb07487f7771d86a4ed4251489352c69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a25c2bd8a6f2445b1fd03387ea47c2b38">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb07487f7771d86a4ed4251489352c69">Iris::viewer_unbind_surface</a> (const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;viewer) noexcept</td></tr>
+<tr class="memdesc:acb07487f7771d86a4ed4251489352c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unbind the external drawing surface controlled by the calling application.  <br /></td></tr>
+<tr class="separator:acb07487f7771d86a4ed4251489352c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f2f0044db8fe114edea87756d1c445e" id="r_a3f2f0044db8fe114edea87756d1c445e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a25c2bd8a6f2445b1fd03387ea47c2b38">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f2f0044db8fe114edea87756d1c445e">Iris::viewer_window_resized</a> (const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;viewer) noexcept</td></tr>
+<tr class="memdesc:a3f2f0044db8fe114edea87756d1c445e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform a viewer that the attached window was resized.  <br /></td></tr>
+<tr class="separator:a3f2f0044db8fe114edea87756d1c445e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8be58d376a3bd4fc74a358fbdbc57ae5" id="r_a8be58d376a3bd4fc74a358fbdbc57ae5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a25c2bd8a6f2445b1fd03387ea47c2b38">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8be58d376a3bd4fc74a358fbdbc57ae5">Iris::viewer_open_slide</a> (const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;viewer, const <a class="el" href="struct_iris_1_1_slide_open_info.html">SlideOpenInfo</a> &amp;info) noexcept</td></tr>
+<tr class="memdesc:a8be58d376a3bd4fc74a358fbdbc57ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and open a slide for viewing.  <br /></td></tr>
+<tr class="separator:a8be58d376a3bd4fc74a358fbdbc57ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454cc974ede858fa98c3a25de0ce40b3" id="r_a454cc974ede858fa98c3a25de0ce40b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a25c2bd8a6f2445b1fd03387ea47c2b38">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a454cc974ede858fa98c3a25de0ce40b3">Iris::viewer_close_slide</a> (const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;viewer) noexcept</td></tr>
+<tr class="memdesc:a454cc974ede858fa98c3a25de0ce40b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the current slide being viewed by the viewer.  <br /></td></tr>
+<tr class="separator:a454cc974ede858fa98c3a25de0ce40b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89df4982cd5615570c156286de024cd4" id="r_a89df4982cd5615570c156286de024cd4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a25c2bd8a6f2445b1fd03387ea47c2b38">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89df4982cd5615570c156286de024cd4">Iris::viewer_engine_translate</a> (const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;viewer, const <a class="el" href="struct_iris_1_1_viewer_translate_scope.html">ViewerTranslateScope</a> &amp;) noexcept</td></tr>
+<tr class="memdesc:a89df4982cd5615570c156286de024cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate the scope view when rendering a whole slide image.  <br /></td></tr>
+<tr class="separator:a89df4982cd5615570c156286de024cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa12d3656059cb59484b936e83fee307" id="r_aaa12d3656059cb59484b936e83fee307"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a25c2bd8a6f2445b1fd03387ea47c2b38">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa12d3656059cb59484b936e83fee307">Iris::viewer_engine_zoom</a> (const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;viewer, const <a class="el" href="struct_iris_1_1_viewer_zoom_scope.html">ViewerZoomScope</a> &amp;) noexcept</td></tr>
+<tr class="memdesc:aaa12d3656059cb59484b936e83fee307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the scope view amound when rending a whole slide image.  <br /></td></tr>
+<tr class="separator:aaa12d3656059cb59484b936e83fee307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4378f5fd5298d5d48d83b854fcb9001c" id="r_a4378f5fd5298d5d48d83b854fcb9001c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a25c2bd8a6f2445b1fd03387ea47c2b38">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4378f5fd5298d5d48d83b854fcb9001c">Iris::viewer_annotate_slide</a> (const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;viewer, const <a class="el" href="struct_iris_1_1_slide_annotation.html">SlideAnnotation</a> &amp;) noexcept</td></tr>
+<tr class="memdesc:a4378f5fd5298d5d48d83b854fcb9001c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert an image slide annotation into the current active slide at the location within the screen.  <br /></td></tr>
+<tr class="separator:a4378f5fd5298d5d48d83b854fcb9001c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19d46070f84a1242547a549836c56413" id="r_a19d46070f84a1242547a549836c56413"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a6c040d1093b9dd15159df07d4b156357">Slide</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19d46070f84a1242547a549836c56413">Iris::create_slide</a> (const <a class="el" href="struct_iris_1_1_slide_open_info.html">SlideOpenInfo</a> &amp;info)</td></tr>
+<tr class="memdesc:a19d46070f84a1242547a549836c56413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="iris_types_8hpp.html#a6c040d1093b9dd15159df07d4b156357" title="Handle to Slide File and Slide Loading Routines (Slide Loader)">Iris::Slide</a> object encapsulating access to a whole slide image object.  <br /></td></tr>
 <tr class="separator:a19d46070f84a1242547a549836c56413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44646ec34970b5181fe4c1008ac2fa85" id="r_a44646ec34970b5181fe4c1008ac2fa85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44646ec34970b5181fe4c1008ac2fa85">Iris::Create_strong_buffer</a> ()</td></tr>
+<tr class="memitem:a44646ec34970b5181fe4c1008ac2fa85" id="r_a44646ec34970b5181fe4c1008ac2fa85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44646ec34970b5181fe4c1008ac2fa85">Iris::Create_strong_buffer</a> ()</td></tr>
 <tr class="memdesc:a44646ec34970b5181fe4c1008ac2fa85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <b>strong</b> buffer but without memory backing.  <br /></td></tr>
 <tr class="separator:a44646ec34970b5181fe4c1008ac2fa85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1597d72ba0a3847f27c0f0c38d09314" id="r_ad1597d72ba0a3847f27c0f0c38d09314"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1597d72ba0a3847f27c0f0c38d09314">Iris::Create_strong_buffer</a> (size_t buffer_size_in_bytes)</td></tr>
+<tr class="memitem:ad1597d72ba0a3847f27c0f0c38d09314" id="r_ad1597d72ba0a3847f27c0f0c38d09314"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1597d72ba0a3847f27c0f0c38d09314">Iris::Create_strong_buffer</a> (size_t buffer_size_in_bytes)</td></tr>
 <tr class="memdesc:ad1597d72ba0a3847f27c0f0c38d09314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <b>strong</b> blank buffer with an initial capacity of buffer_size_in_bytes bytes long.  <br /></td></tr>
 <tr class="separator:ad1597d72ba0a3847f27c0f0c38d09314"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6b0ccbc3906ea39f01d1c1f2ed9d16a" id="r_ae6b0ccbc3906ea39f01d1c1f2ed9d16a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6b0ccbc3906ea39f01d1c1f2ed9d16a">Iris::Copy_strong_buffer_from_data</a> (const void *data_ptr, size_t bytes)</td></tr>
+<tr class="memitem:ae6b0ccbc3906ea39f01d1c1f2ed9d16a" id="r_ae6b0ccbc3906ea39f01d1c1f2ed9d16a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6b0ccbc3906ea39f01d1c1f2ed9d16a">Iris::Copy_strong_buffer_from_data</a> (const void *data_ptr, size_t bytes)</td></tr>
 <tr class="memdesc:ae6b0ccbc3906ea39f01d1c1f2ed9d16a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <b>strong</b> buffer and copy the data pointed to by dataptr and bytes in length (in bytes).  <br /></td></tr>
 <tr class="separator:ae6b0ccbc3906ea39f01d1c1f2ed9d16a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9e2bab62c8401326ec1e6eaa6967a6c" id="r_ab9e2bab62c8401326ec1e6eaa6967a6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9e2bab62c8401326ec1e6eaa6967a6c">Iris::Wrap_weak_buffer_fom_data</a> (const void *const data_ref, size_t bytes)</td></tr>
+<tr class="memitem:ab9e2bab62c8401326ec1e6eaa6967a6c" id="r_ab9e2bab62c8401326ec1e6eaa6967a6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9e2bab62c8401326ec1e6eaa6967a6c">Iris::Wrap_weak_buffer_fom_data</a> (const void *const data_ref, size_t bytes)</td></tr>
 <tr class="memdesc:ab9e2bab62c8401326ec1e6eaa6967a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap a <b>weak buffer</b> around foreign data. This wrapper is used for implementing Iris Codec functions on foreign data blocks without having to copy the data.  <br /></td></tr>
 <tr class="separator:ab9e2bab62c8401326ec1e6eaa6967a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af259df495626448bb966405a56215f52" id="r_af259df495626448bb966405a56215f52"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af259df495626448bb966405a56215f52">Iris::Buffer_write_into_buffer</a> (const <a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9">Buffer</a> &amp;byffer, size_t bytes)</td></tr>
-<tr class="memdesc:af259df495626448bb966405a56215f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data into a buffer in a safe manner.  <br /></td></tr>
-<tr class="separator:af259df495626448bb966405a56215f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a733e4983093597af049441169d1cb040" id="r_a733e4983093597af049441169d1cb040"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a733e4983093597af049441169d1cb040">Iris::Buffer_get_data</a> (const <a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9">Buffer</a> &amp;buffer, void *&amp;data, size_t &amp;bytes)</td></tr>
+<tr class="memitem:a0738d423fa6f0818e918fdd17c1072ff" id="r_a0738d423fa6f0818e918fdd17c1072ff"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0738d423fa6f0818e918fdd17c1072ff">Iris::Buffer_write_into_buffer</a> (const <a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec">Buffer</a> &amp;buffer, size_t bytes)</td></tr>
+<tr class="memdesc:a0738d423fa6f0818e918fdd17c1072ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data into a buffer in a safe manner.  <br /></td></tr>
+<tr class="separator:a0738d423fa6f0818e918fdd17c1072ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a733e4983093597af049441169d1cb040" id="r_a733e4983093597af049441169d1cb040"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a733e4983093597af049441169d1cb040">Iris::Buffer_get_data</a> (const <a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec">Buffer</a> &amp;buffer, void *&amp;data, size_t &amp;bytes)</td></tr>
 <tr class="memdesc:a733e4983093597af049441169d1cb040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy-extract the data from the underlying buffer structure.  <br /></td></tr>
 <tr class="separator:a733e4983093597af049441169d1cb040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c886088a1da9a3359c8223aa4c69465" id="r_a8c886088a1da9a3359c8223aa4c69465"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c886088a1da9a3359c8223aa4c69465">Iris::Buffer_change_strength</a> (const <a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec">Buffer</a> &amp;buffer, <a class="el" href="iris_types_8hpp.html#aab7511ac29e04c5795cfc28bffb559af">BufferReferenceStrength</a> strength)</td></tr>
+<tr class="memdesc:a8c886088a1da9a3359c8223aa4c69465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the strength of an Iris Buffer.  <br /></td></tr>
+<tr class="separator:a8c886088a1da9a3359c8223aa4c69465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Iris Core API Documentation. </p>
@@ -191,6 +179,37 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2024-08-26</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023-24 Created by Ryan Landvater on 8/26/23. </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a8c886088a1da9a3359c8223aa4c69465" name="a8c886088a1da9a3359c8223aa4c69465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c886088a1da9a3359c8223aa4c69465">&#9670;&#160;</a></span>Buffer_change_strength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Iris::Buffer_change_strength </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec">Buffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="iris_types_8hpp.html#aab7511ac29e04c5795cfc28bffb559af">BufferReferenceStrength</a></td>          <td class="paramname"><span class="paramname"><em>strength</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change the strength of an Iris Buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>handle to the buffer object. Must be a valid buffer. </td></tr>
+    <tr><td class="paramname">strength</td><td>strength to assign the buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>BufferReferenceStrength for more details </dd></dl>
+
+</div>
+</div>
 <a id="a733e4983093597af049441169d1cb040" name="a733e4983093597af049441169d1cb040"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a733e4983093597af049441169d1cb040">&#9670;&#160;</a></span>Buffer_get_data()</h2>
 
@@ -200,7 +219,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void Iris::Buffer_get_data </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9">Buffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec">Buffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -219,7 +238,7 @@ Functions</h2></td></tr>
 <p>This is useful if you don't want to include the IrisCodecBuffer.h header and expose yourself to accidentally using it incorrectly and corrupting your memory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">buffer</td><td><a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> handle </td></tr>
+    <tr><td class="paramname">buffer</td><td><a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> handle </td></tr>
     <tr><td class="paramname">data</td><td>data pointer to copy the data into. If a null-ptr, only the size will be returned. </td></tr>
     <tr><td class="paramname">bytes</td><td>number of bytes copied out of the buffer handle </td></tr>
   </table>
@@ -228,8 +247,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af259df495626448bb966405a56215f52" name="af259df495626448bb966405a56215f52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af259df495626448bb966405a56215f52">&#9670;&#160;</a></span>Buffer_write_into_buffer()</h2>
+<a id="a0738d423fa6f0818e918fdd17c1072ff" name="a0738d423fa6f0818e918fdd17c1072ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0738d423fa6f0818e918fdd17c1072ff">&#9670;&#160;</a></span>Buffer_write_into_buffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,7 +256,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void * Iris::Buffer_write_into_buffer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9">Buffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>byffer</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec">Buffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -250,10 +269,10 @@ Functions</h2></td></tr>
 <p>Write data into a buffer in a safe manner. </p>
 <p>This is useful if you don't want to include the IrisCodec_buffer.h header and expose yourself to accidentally using it wrong and corrupting your data. This function works like a c-style array exposed to a method for writing. Provide the buffer and size. This method functions differently based upon the strength of the reference (see discussion below)</p>
 <p>If the reference is <b>STRONG</b>, this method will expose the begining of the next writable segment and will expand the buffer if there is insufficient space. The buffer's internal size metric will reflect the new data.</p>
-<dl class="section note"><dt>Note</dt><dd>If the reference is <b>weak</b>, this method will expose the begining of the buffer sequence <b>this will throw an exception</b> if there is insufficient space within the buffer (as weak buffers are not permitted to expand a buffer). <b>If you are worried about a buffer overflow, you may consider strengthening the buffer reference to allow for expansion.</b></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If the reference is <b>weak</b> and if there is insufficient space within the bufferthis will throw an exception (as weak buffer wrappers are not permitted to expand a buffer). <b>If you are worried about a buffer overflow, you may consider strengthening the buffer reference to allow for expansion.</b></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">buffer</td><td><a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> handle </td></tr>
+    <tr><td class="paramname">buffer</td><td><a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> handle </td></tr>
     <tr><td class="paramname">bytes</td><td>number of bytes to prepare for writing; size of the buffer will be expanded by this number of bytes </td></tr>
   </table>
   </dd>
@@ -292,7 +311,7 @@ NULL-pointer in the event of failure. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Valid <a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> handle on success </dd>
+<dl class="section return"><dt>Returns</dt><dd>Valid <a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> handle on success </dd>
 <dd>
 Nullptr on failure </dd></dl>
 
@@ -313,16 +332,16 @@ Nullptr on failure </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Create an Iris::Slide object encapsulating access to a whole slide image object. </p>
+<p>Create an <a class="el" href="iris_types_8hpp.html#a6c040d1093b9dd15159df07d4b156357" title="Handle to Slide File and Slide Loading Routines (Slide Loader)">Iris::Slide</a> object encapsulating access to a whole slide image object. </p>
 <p>The Slide object has a variety of interal functionalities in addition to mapping the WSI file. This includes asynchronous non-blocking read threads that load the slide tile image data.</p>
-<dl class="section note"><dt>Note</dt><dd>Iris::iewer_open_slide(const Viewer&amp; viewer, const Slide&amp;) is the preferred method as it allows the Iris Render Engine to configure optional performance parameters.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Iris::viewer_open_slide(const Viewer&amp; viewer, const Slide&amp;) is the preferred method as it allows the Iris Render Engine to configure optional performance parameters.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">info</td><td><a class="el" href="struct_iris_1_1_slide_open_info.html" title="Parameters required to create an Iris::Slide WSI file handle.">Iris::SlideOpenInfo</a> structure</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Valid Iris::Slide handle on success </dd>
+<dl class="section return"><dt>Returns</dt><dd>Valid <a class="el" href="iris_types_8hpp.html#a6c040d1093b9dd15159df07d4b156357" title="Handle to Slide File and Slide Loading Routines (Slide Loader)">Iris::Slide</a> handle on success </dd>
 <dd>
 Nullptr on failure </dd></dl>
 
@@ -347,7 +366,7 @@ Nullptr on failure </dd></dl>
 <p>This is copy constructable and will maintain the life of the underlying data (once allocated) as long as one copy persists. Configure the memory backing afterwards by expanding the data block. <br  />
  This function will construct a strong buffer object with 'capacity' and 'size' of 0-bytes,</p>
 <dl class="section note"><dt>Note</dt><dd>Despite being a strong buffer, there is no owned data block yet. It must be initialized first.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Valid <a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> handle on success but without data block backing. </dd>
+<dl class="section return"><dt>Returns</dt><dd>Valid <a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> handle on success but without data block backing. </dd>
 <dd>
 Nullptr on failure </dd></dl>
 
@@ -376,17 +395,20 @@ Nullptr on failure </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Valid <a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> handle with size 0 bytes on success </dd>
+<dl class="section return"><dt>Returns</dt><dd>Valid <a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> handle with size 0 bytes on success </dd>
 <dd>
 Nullptr on failure </dd></dl>
 
 </div>
 </div>
-<a id="a4595892bbfee049c291156616c186098" name="a4595892bbfee049c291156616c186098"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4595892bbfee049c291156616c186098">&#9670;&#160;</a></span>create_viewer()</h2>
+<a id="a873a2e0b411e964da5812745bb6a31ad" name="a873a2e0b411e964da5812745bb6a31ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a873a2e0b411e964da5812745bb6a31ad">&#9670;&#160;</a></span>create_viewer()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Viewer Iris::create_viewer </td>
@@ -395,11 +417,16 @@ Nullptr on failure </dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Create an Iris viewer instance. </p>
 <p>The viewer is the primary interface between the whole slide rendering system and the calling application that is using Iris to draw slide views. Use the below viewer_bind_external_surface to bind and initialize the system.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>only creates / initializes</b> the viewer. <b>It does not initialize it.</b> The viewer must be bound to a application surface generated by the operating system before it can be used.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>only creates</b> the viewer. <b>It does not initialize it.</b> The viewer must be bound to a application surface generated by the operating system before it can be used.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Valid Viewer handle on success </dd>
 <dd>
 Nullptr on failure </dd></dl>
@@ -466,8 +493,8 @@ Nullptr on failure </dd></dl>
 
 </div>
 </div>
-<a id="a68751a3c95d0a76a34a4719ec8681723" name="a68751a3c95d0a76a34a4719ec8681723"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68751a3c95d0a76a34a4719ec8681723">&#9670;&#160;</a></span>viewer_annotate_slide()</h2>
+<a id="a4378f5fd5298d5d48d83b854fcb9001c" name="a4378f5fd5298d5d48d83b854fcb9001c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4378f5fd5298d5d48d83b854fcb9001c">&#9670;&#160;</a></span>viewer_annotate_slide()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -476,9 +503,9 @@ Nullptr on failure </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Iris::viewer_annotate_slide </td>
+          <td class="memname">Result Iris::viewer_annotate_slide </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -496,63 +523,15 @@ Nullptr on failure </dd></dl>
 <p>Insert an image slide annotation into the current active slide at the location within the screen. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">viewer</td><td><a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0" title="The viewer the the primary control class that interfaces between external applications and their view...">Iris::Viewer</a> handle </td></tr>
+    <tr><td class="paramname">viewer</td><td><a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925" title="Access point to Iris API and controls all elements of Iris viewspace.">Iris::Viewer</a> handle </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="afa026e83e47bb657497cf63490b61a7d" name="afa026e83e47bb657497cf63490b61a7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa026e83e47bb657497cf63490b61a7d">&#9670;&#160;</a></span>viewer_bind_external_surface()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Iris::viewer_bind_external_surface </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_iris_1_1_viewer_bind_external_surface_info.html">ViewerBindExternalSurfaceInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bind a viewer to an external surface controlled by the calling application. </p>
-<p>Unbind the viewer before destroying the view or allow the viewer to exit scope and it will automatically unbind the surface. </p><dl class="section note"><dt>Note</dt><dd>The provided surface outlive the viewer once bound. Alternatively, the viewer can be unbound via viewer_unbind_surface(const Viewer&amp;);</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>true when the system has sucessfully configured </dd>
-<dd>
-false when the system failed to effectively configure. </dd></dl>
-
-</div>
-</div>
-<a id="adbc65c324aaa1471d68ac5c71a2cb198" name="adbc65c324aaa1471d68ac5c71a2cb198"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbc65c324aaa1471d68ac5c71a2cb198">&#9670;&#160;</a></span>viewer_close_slide()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Iris::viewer_close_slide </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Close the current slide being viewed by the viewer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">viewer</td><td><a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0" title="The viewer the the primary control class that interfaces between external applications and their view...">Iris::Viewer</a> handle </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a6a223065643b0833535283dc28e36d28" name="a6a223065643b0833535283dc28e36d28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a223065643b0833535283dc28e36d28">&#9670;&#160;</a></span>viewer_engine_translate()</h2>
+<a id="a5d359dcbea415e4bd01dc39cd5a36429" name="a5d359dcbea415e4bd01dc39cd5a36429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d359dcbea415e4bd01dc39cd5a36429">&#9670;&#160;</a></span>viewer_bind_external_surface()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -561,9 +540,73 @@ false when the system failed to effectively configure. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Iris::viewer_engine_translate </td>
+          <td class="memname">Result Iris::viewer_bind_external_surface </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="struct_iris_1_1_viewer_bind_external_surface_info.html">ViewerBindExternalSurfaceInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bind a viewer to an external surface controlled by the calling application. </p>
+<p>Unbind the viewer before destroying the view or allow the viewer to exit scope and it will automatically unbind the surface. </p><dl class="section note"><dt>Note</dt><dd>The provided surface must outlive the viewer once bound. If the viewer should outlive the surface, the viewer can be unbound via viewer_unbind_surface (const Viewer&amp;);</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the system has sucessfully configured </dd>
+<dd>
+false when the system failed to effectively configure. </dd></dl>
+
+</div>
+</div>
+<a id="a454cc974ede858fa98c3a25de0ce40b3" name="a454cc974ede858fa98c3a25de0ce40b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454cc974ede858fa98c3a25de0ce40b3">&#9670;&#160;</a></span>viewer_close_slide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Result Iris::viewer_close_slide </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Close the current slide being viewed by the viewer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">viewer</td><td><a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925" title="Access point to Iris API and controls all elements of Iris viewspace.">Iris::Viewer</a> handle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a89df4982cd5615570c156286de024cd4" name="a89df4982cd5615570c156286de024cd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89df4982cd5615570c156286de024cd4">&#9670;&#160;</a></span>viewer_engine_translate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Result Iris::viewer_engine_translate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -581,15 +624,15 @@ false when the system failed to effectively configure. </dd></dl>
 <p>Translate the scope view when rendering a whole slide image. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">viewer</td><td><a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0" title="The viewer the the primary control class that interfaces between external applications and their view...">Iris::Viewer</a> handle </td></tr>
+    <tr><td class="paramname">viewer</td><td><a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925" title="Access point to Iris API and controls all elements of Iris viewspace.">Iris::Viewer</a> handle </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ae16b410a5fa7d0cf2209173d4f098405" name="ae16b410a5fa7d0cf2209173d4f098405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae16b410a5fa7d0cf2209173d4f098405">&#9670;&#160;</a></span>viewer_engine_zoom()</h2>
+<a id="aaa12d3656059cb59484b936e83fee307" name="aaa12d3656059cb59484b936e83fee307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa12d3656059cb59484b936e83fee307">&#9670;&#160;</a></span>viewer_engine_zoom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -598,9 +641,9 @@ false when the system failed to effectively configure. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Iris::viewer_engine_zoom </td>
+          <td class="memname">Result Iris::viewer_engine_zoom </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -618,81 +661,26 @@ false when the system failed to effectively configure. </dd></dl>
 <p>Change the scope view amound when rending a whole slide image. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">viewer</td><td><a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0" title="The viewer the the primary control class that interfaces between external applications and their view...">Iris::Viewer</a> handle </td></tr>
+    <tr><td class="paramname">viewer</td><td><a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925" title="Access point to Iris API and controls all elements of Iris viewspace.">Iris::Viewer</a> handle </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ae5f55ebb07f47fa9626cc6ac19f577f2" name="ae5f55ebb07f47fa9626cc6ac19f577f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5f55ebb07f47fa9626cc6ac19f577f2">&#9670;&#160;</a></span>viewer_get_active_slide()</h2>
+<a id="a8be58d376a3bd4fc74a358fbdbc57ae5" name="a8be58d376a3bd4fc74a358fbdbc57ae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8be58d376a3bd4fc74a358fbdbc57ae5">&#9670;&#160;</a></span>viewer_open_slide()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Slide Iris::viewer_get_active_slide </td>
+          <td class="memname">Result Iris::viewer_open_slide </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the current slide being viewed by the viewer. Returns a Slide nullptr on failure. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">viewer</td><td><a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0" title="The viewer the the primary control class that interfaces between external applications and their view...">Iris::Viewer</a> handle </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Valid Slide handle on success </dd>
-<dd>
-Nullptr on failure. </dd></dl>
-
-</div>
-</div>
-<a id="af536fb9a9b867350a1931f7180e6e300" name="af536fb9a9b867350a1931f7180e6e300"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af536fb9a9b867350a1931f7180e6e300">&#9670;&#160;</a></span>viewer_open_slide() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Iris::viewer_open_slide </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Slide &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Load and begin rendering the supplied active Iris Slide. </p>
-<p>This will close any currently opened slide and attempt to render the provided Iris::Slide object, if it is a valid slide handle.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">viewer</td><td><a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0" title="The viewer the the primary control class that interfaces between external applications and their view...">Iris::Viewer</a> handle </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a64b63aabfed9b61035f7b7f888b56de3" name="a64b63aabfed9b61035f7b7f888b56de3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64b63aabfed9b61035f7b7f888b56de3">&#9670;&#160;</a></span>viewer_open_slide() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Iris::viewer_open_slide </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -700,13 +688,18 @@ Nullptr on failure. </dd></dl>
           <td class="paramtype">const <a class="el" href="struct_iris_1_1_slide_open_info.html">SlideOpenInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>info</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Create and open a slide for viewing. </p>
-<p>This will close any currently opened slide within the viewer and attempt to open a new slide using the file information defined within <a class="el" href="struct_iris_1_1_slide_open_info.html" title="Parameters required to create an Iris::Slide WSI file handle.">Iris::SlideOpenInfo</a> structure. Use the <a class="el" href="#af536fb9a9b867350a1931f7180e6e300" title="Load and begin rendering the supplied active Iris Slide.">Iris::viewer_open_slide(const Iris::Viewer&amp;, const Iris::Slide&amp;)</a> function if there is already an active Iris::Slide object opened via <a class="el" href="#a19d46070f84a1242547a549836c56413" title="Create an Iris::Slide object encapsulating access to a whole slide image object.">Iris::create_slide(const Iris::SlideOpenInfo&amp;)</a> call with valid info;</p>
+<p>This will close any currently opened slide within the viewer and attempt to open a new slide using the file information defined within <a class="el" href="struct_iris_1_1_slide_open_info.html" title="Parameters required to create an Iris::Slide WSI file handle.">Iris::SlideOpenInfo</a> structure. Use the Iris::viewer_open_slide(const Iris::Viewer&amp;, const Iris::Slide&amp;) function if there is already an active <a class="el" href="iris_types_8hpp.html#a6c040d1093b9dd15159df07d4b156357" title="Handle to Slide File and Slide Loading Routines (Slide Loader)">Iris::Slide</a> object opened via <a class="el" href="#a19d46070f84a1242547a549836c56413" title="Create an Iris::Slide object encapsulating access to a whole slide image object.">Iris::create_slide(const Iris::SlideOpenInfo&amp;)</a> call with valid info;</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">viewer</td><td><a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0" title="The viewer the the primary control class that interfaces between external applications and their view...">Iris::Viewer</a> handle </td></tr>
+    <tr><td class="paramname">viewer</td><td><a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925" title="Access point to Iris API and controls all elements of Iris viewspace.">Iris::Viewer</a> handle </td></tr>
     <tr><td class="paramname">info</td><td>slide file information </td></tr>
   </table>
   </dd>
@@ -714,52 +707,68 @@ Nullptr on failure. </dd></dl>
 
 </div>
 </div>
-<a id="abc8a04a771c7a0d4fbe633b15557775b" name="abc8a04a771c7a0d4fbe633b15557775b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc8a04a771c7a0d4fbe633b15557775b">&#9670;&#160;</a></span>viewer_unbind_surface()</h2>
+<a id="acb07487f7771d86a4ed4251489352c69" name="acb07487f7771d86a4ed4251489352c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb07487f7771d86a4ed4251489352c69">&#9670;&#160;</a></span>viewer_unbind_surface()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Iris::viewer_unbind_surface </td>
+          <td class="memname">Result Iris::viewer_unbind_surface </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Unbind the external drawing surface controlled by the calling application. </p>
 <dl class="section note"><dt>Note</dt><dd>For objective-C implementations, this will break the ARC loop and allow the proper program breakdown</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">viewer</td><td><a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0" title="The viewer the the primary control class that interfaces between external applications and their view...">Iris::Viewer</a> handle </td></tr>
+    <tr><td class="paramname">viewer</td><td><a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925" title="Access point to Iris API and controls all elements of Iris viewspace.">Iris::Viewer</a> handle </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ad1ba978fd6aad72e233f6a2672859f8e" name="ad1ba978fd6aad72e233f6a2672859f8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1ba978fd6aad72e233f6a2672859f8e">&#9670;&#160;</a></span>viewer_window_resized()</h2>
+<a id="a3f2f0044db8fe114edea87756d1c445e" name="a3f2f0044db8fe114edea87756d1c445e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f2f0044db8fe114edea87756d1c445e">&#9670;&#160;</a></span>viewer_window_resized()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Iris::viewer_window_resized </td>
+          <td class="memname">Result Iris::viewer_window_resized </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925">Viewer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewer</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Inform a viewer that the attached window was resized. </p>
 <p>This will force a reconstruction of the viewer rendering engine's swapchain to accomodate the new window size. It will also resize any optional UI scene object locations / R-tree orderings.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">viewer</td><td><a class="el" href="#a7cfabf96ecdcc4a865ce5c7a91fa5ba0" title="The viewer the the primary control class that interfaces between external applications and their view...">Iris::Viewer</a> handle </td></tr>
+    <tr><td class="paramname">viewer</td><td><a class="el" href="iris_types_8hpp.html#a045e8494d829985c839ab64aaf0dd925" title="Access point to Iris API and controls all elements of Iris viewspace.">Iris::Viewer</a> handle </td></tr>
   </table>
   </dd>
 </dl>
@@ -790,14 +799,7 @@ Nullptr on failure. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This buffer has no ownership over the underlying data and <b>the underlying data must persist</b> while the buffer is used. </dd>
 <dd>
 The buffer can switch ownership to <b>strong</b> but doing so may invalidate the origianl data_ref.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data_ref</td><td></td></tr>
-    <tr><td class="paramname">bytes</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Valid <a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> (<b>weak ownership</b>) handle on success </dd>
+<dl class="section return"><dt>Returns</dt><dd>Valid <a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec" title="Reference counted data object used to wrap datablocks.">Iris::Buffer</a> (<b>weak ownership</b>) handle on success </dd>
 <dd>
 Nullptr on failure </dd></dl>
 

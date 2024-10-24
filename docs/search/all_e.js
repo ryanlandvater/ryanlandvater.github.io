@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['slide_20imaging_0',['Iris Whole Slide Imaging',['../index.html',1,'']]],
-  ['slideannotation_1',['SlideAnnotation',['../struct_iris_1_1_slide_annotation.html',1,'Iris']]],
-  ['slideopeninfo_2',['SlideOpenInfo',['../struct_iris_1_1_slide_open_info.html',1,'Iris']]]
+  ['prepare_0',['prepare',['../class_iris_1_1_____i_n_t_e_r_n_a_l_____buffer.html#a6a90532206408c40b375e4c8afcbdde6',1,'Iris::__INTERNAL__Buffer']]],
+  ['programming_20interface_20api_1',['Iris Official Application Programming Interface (API)',['../index.html#autotoc_md0',1,'']]],
+  ['publications_2',['Publications',['../index.html#autotoc_md2',1,'']]]
 ];

@@ -105,11 +105,20 @@ $(function(){ initResizable(false); });
 Public Attributes</h2></td></tr>
 <tr class="memitem:a71260d790e789a8c7838b820f054007d" id="r_a71260d790e789a8c7838b820f054007d"><td class="memItemLeft" align="right" valign="top"><a id="a71260d790e789a8c7838b820f054007d" name="a71260d790e789a8c7838b820f054007d"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>increment</b> = 0.f</td></tr>
+<tr class="memdesc:a71260d790e789a8c7838b820f054007d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fraction of current zoom amount by which to increase or decrease. <br /></td></tr>
 <tr class="separator:a71260d790e789a8c7838b820f054007d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab114769c4a71fa777f75f2a2d594150e" id="r_ab114769c4a71fa777f75f2a2d594150e"><td class="memItemLeft" align="right" valign="top"><a id="ab114769c4a71fa777f75f2a2d594150e" name="ab114769c4a71fa777f75f2a2d594150e"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>x_location</b> = 0.5f</td></tr>
+<tr class="memdesc:ab114769c4a71fa777f75f2a2d594150e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Horizontal location of zoom origin (towards or way from this point) <br /></td></tr>
+<tr class="separator:ab114769c4a71fa777f75f2a2d594150e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a456d69ec1b581eb40fb10885911c1f12" id="r_a456d69ec1b581eb40fb10885911c1f12"><td class="memItemLeft" align="right" valign="top"><a id="a456d69ec1b581eb40fb10885911c1f12" name="a456d69ec1b581eb40fb10885911c1f12"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>y_location</b> = 0.5f</td></tr>
+<tr class="memdesc:a456d69ec1b581eb40fb10885911c1f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertical location of zoom origin. <br /></td></tr>
+<tr class="separator:a456d69ec1b581eb40fb10885911c1f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Information to change the zoom objective. </p>
-<p>A positive zoom increment will increase the scope view zoom while a negative increment will decrease the current zoom. </p>
+<p>A positive zoom increment will increase the scope view zoom while a negative increment will decrease the current zoom. The zoom origin (x_location and y_location) defines the region around which to zoom. This is best set as either the cursor location or view center (0.5, 0.5). </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/<a class="el" href="iris_types_8hpp_source.html">IrisTypes.hpp</a></li>
 </ul>

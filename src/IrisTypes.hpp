@@ -14,98 +14,88 @@
  * 
  */
 
-
 #ifndef IrisTypes_h
 #define IrisTypes_h
 
-#define U8_CAST(X)          static_cast<uint8_t>(X)
-#define U16_CAST(X)         static_cast<uint16_t>(X)
-#define U32_CAST(X)         static_cast<uint32_t>(X)
-#define FLOAT_CAST(X)       static_cast<float>(X)
-#define BYTE_PTR_CAST(X)    static_cast<BYTE*>(X)
-#define VOID_PTR_CAST(X)    reinterpret_cast<void*>(X)
-#define ATOMIC(X)           std::atomic<X>
-#define TILE_PIX_LENGTH     256U
-#define TILE_PIX_FLOAT      256.f
-#define TILE_PIX_AREA       65536U
-#define TILE_PIX_BYTES_RGB  196608U
-#define TILE_PIX_BYTES_RGBA 262144U
-#define LAYER_STEP          4
-#define LAYER_STEP_FLOAT    4.f
-
 namespace Iris {
-using BYTE              = uint8_t;
-using BYTE_ARRAY        = std::vector<BYTE>;
-using CString           = std::vector<char>;
-using CStringList       = std::vector<const char*>;
-using LambdaPtr         = std::function<void()>;
-using LambdaPtrs        = std::vector<LambdaPtr>;
-using atomic_bool       = std::atomic<bool>;
-using atomic_byte       = std::atomic<uint8_t>;
-using atomic_sint8      = std::atomic<int8_t>;
-using atomic_uint8      = std::atomic<uint8_t>;
-using atomic_sint16     = std::atomic<int16_t>;
-using atomic_uint16     = std::atomic<uint16_t>;
-using atomic_sint32     = std::atomic<int32_t>;
-using atomic_uint32     = std::atomic<uint32_t>;
-using atomic_sint64     = std::atomic<int64_t>;
-using atomic_uint64     = std::atomic<uint64_t>;
-using atomic_size       = std::atomic<size_t>;
-using atomic_float      = std::atomic<float>;
-using Threads           = std::vector<std::thread>;
-using Mutex             = std::mutex;
-using MutexLock         = std::unique_lock<Mutex>;
-using SharedMutexLock   = std::shared_ptr<MutexLock>;
-using SharedMutex       = std::shared_mutex;
-using ExclusiveLock     = std::unique_lock<SharedMutex>;
-using SharedLock        = std::shared_lock<SharedMutex>;
-using ReadLock          = std::shared_lock<SharedMutex>;
-using WriteLock         = std::unique_lock<SharedMutex>;
-using Notification      = std::condition_variable;
-using FilePaths         = std::vector<const char*>;
-using CallbackDict      = std::unordered_map<std::string, LambdaPtr>;
-using ViewerWeak        = std::weak_ptr<class __INTERNAL__Viewer>;
-
-using LayerIndex        = uint32_t;
-using TileIndex         = uint32_t;
-using ImageIndex        = uint32_t;
-using TileIndicies      = std::vector<TileIndex>;
-using TileIndexSet      = std::unordered_set<TileIndex>;
-using ImageIndicies     = std::vector<ImageIndex>;
-
 /**
  * @brief Result flags returned by Iris as part of API calls.
  * 
  */
-enum Result {
-    IRIS_SUCCESS = 0,
-    IRIS_FAILURE = 1
+enum Result : uint32_t {
+    IRIS_SUCCESS        = 0,
+    IRIS_FAILURE        = 0x00000001,
+    IRIS_UNINITIALIZED  = 0x00000002,
 };
-
+/**
+ * @brief Iris Buffer ownership strength to underlying data. A weak reference
+ * only wraps data blocks by reference but has no responsibility over the 
+ * creation or freeing of that datablock. Strong references have responsibility
+ * over the data backing the buffer and will free the memory on buffer destruction.
+ * 
+ * \note A weak buffer explicitly is forbidden from resizing the buffer as it *may*
+ * invalidate the original pointer.
+ * \warning Changing a strong to weak buffer **requires** the calling program
+ * take responsibility for the buffer data pointer. It is now that program's
+ * responsibility to free that data once finished or a memory leak will ensue.
+ * 
+ */
+enum BufferReferenceStrength {
+    REFERENCE_WEAK      = 0,
+    REFERENCE_STRONG    = 1,
+};
 /**
  * @brief Reference counted data object used to wrap datablocks.
- * 
- * It can either strong reference or weak reference the underlying data. 
- * The buffer can also shift between weak and strong referrences if chosen; 
- * however, this is very dangerous obviously and you need to ensure you 
+ *
+ * It can either strong reference or weak reference the underlying data.
+ * The buffer can also shift between weak and strong referrences if chosen;
+ * however, this is very dangerous obviously and you need to ensure you
  * are tracking if you have switched from weak to strong or vice versa.
+ *
+ * \note __INTERNAL__Buffer is an internally defined class. You may optionally
+ *  include it in your implementation; however, many class methods are unsafe
+ *  as they were created for exclusive use by Iris developers and use of these methods
+ *  comes with risk.
+ *
+ *  \warning Buffer is currently NOT safe for concurrent use on muplitple threads.
+ *  This will be fixed in future updates.
  */
 using Buffer = std::shared_ptr<class __INTERNAL__Buffer>;
-using Viewer = std::shared_ptr<class  __INTERNAL__Viewer>;
+/**
+ * @brief Access point to Iris API and controls all elements of Iris viewspace
+ * 
+ * The viewer the the primary control class that interfaces between external
+ * applications and their views, and the iris rendering system. It contains interface
+ * capabilities between external controllers, coordinates display presentations between
+ * external surfaces, and creates any user interface functionalities defined in user
+ * interface markup strctures.
+ * \note __INTERNAL__Viewer is an internally defined class and not externally exposed.
+ */
+using Viewer = std::shared_ptr <class __INTERNAL__Viewer>;
+/**
+ * @brief Handle to Slide File and Slide Loading Routines (Slide Loader)
+ * 
+ * The Slide object represents a mapped slide file and high-performance loading
+ * routines to bring slide data into RAM with limited overhead
+ */
 using Slide  = std::shared_ptr<class  __INTERNAL__Slide>;
 
 /**
  * @brief Defines necesary runtime parameters for starting the Iris rendering engine.
  * 
- * @param ApplicationName informs the rendering engine of the calling application's name
- * @param ApplicationVersion informs the engine of the calling application version
- * @param ApplicationBundlePath provides the executable location. This is needed for runtime
- * loading of application files such as UI markup files and shader code.
+ * These runtime parameters will be forwarded to the GPU for certain task tracking
+ * and the application bundle path (term from Apple's OS) is important for loading
+ * referenced / included runtime files.
  * 
+ * Additional runtime parameters will be added as needed in the future.
  */
 struct ViewerCreateInfo {
+    /// @brief Informs the rendering engine of the calling application's name
     const char*         ApplicationName;
+    /// @brief Informs the engine of the calling application version
     uint32_t            ApplicationVersion;
+    /// @brief provides the executable location. This is needed for runtime
+    /// loading of application files such as UI markup files and shader code.
     const char*         ApplicationBundlePath;
 };
 /**
@@ -136,9 +126,13 @@ struct ViewerBindExternalSurfaceInfo {
  * 
  */
 struct ViewerTranslateScope {
+    /// @brief Fraction of *horizontal* viewspace to translate [-1,1](-left, +right)
     float               x_translate = 0.f;
+    /// @brief Fraction of *vertical* viewspace to translate [-1,1](-left, +right)
     float               y_translate = 0.f;
+    /// @brief Horizontal translation velocity (suggested [0,2])
     float               x_velocity  = 0.f;
+    /// @brief Velocity of translation (suggested [0,2]) in the horizontal
     float               y_velocity  = 0.f;
 };
 /**
@@ -146,10 +140,18 @@ struct ViewerTranslateScope {
  * 
  * A positive zoom increment will increase the scope view 
  * zoom while a negative increment will decrease the current zoom.
+ * The zoom origin (x_location and y_location) defines the region
+ * around which to zoom. This is best set as either the cursor location
+ * or view center (0.5, 0.5).
  * 
  */
 struct ViewerZoomScope {
+    /// @brief Fraction of current zoom amount by which to increase or decrease
     float               increment   = 0.f;
+    /// @brief Horizontal location of zoom origin (towards or way from this point)
+    float               x_location  = 0.5f;
+    /// @brief Vertical location of zoom origin
+    float               y_location  = 0.5f;
 };
 /**
  * @brief Defines the image encoding format for an image annotation.
@@ -160,6 +162,9 @@ enum AnnotationFormat {
     ANNOTATION_FORMAT_PNG,
     ANNOTATION_FORMAT_JPEG,
 };
+/** \def SlideAnnotation::format
+ * The AnnotationFormat of the image data to be rendered
+ */
 /**
  * @brief Structure defining requirements to create an image-based
  * slide annotation.
@@ -170,21 +175,19 @@ enum AnnotationFormat {
  * starts in the middle of the current view would have an offset of 0.5)
  * The engine will immediately begin rendering the image on top of the 
  * rendered slide layers.
- * 
- * @param format the AnnotationFormat of the image data to be rendered
- * @param x_offset the x_offset of the current scope view window where the image starts [0,1.f]
- * @param y_offset the x_offset of the current scope view window where the image starts [0,1.f]
- * @param width the number of horizontal pixels in the image annotation
- * @param height the number of vertical pixels in the image annotation
- * @param data the encoded pixel data that comprises the image, width wide and hight tall
- * 
  */
 struct SlideAnnotation {
+    /// @brief AnnotationFormat of the image data to be rendered
     AnnotationFormat    format      = ANNOTATION_FORMAT_UNDEFINED;
+    /// @brief x-offset of the current scope view window where the image starts [0,1.f]
     float               x_offset    = 0.f;
+    /// @brief y-offset of the current scope view window where the image starts [0,1.f]
     float               y_offset    = 0.f;
+    /// @brief Number of horizontal (x) pixels in the image annotation
     float               width       = 0.f;
+    /// @brief Number of vertical (y) pixels in the image annotation
     float               height      = 0.f;
+    /// @brief Encoded pixel data that comprises the image, width wide and hight tall
     Buffer              data;
 };
 /**
@@ -193,16 +196,15 @@ struct SlideAnnotation {
  * 
  * The relative scale (zoom amount) as well as how downsampled the layer is relative to 
  * the highest zoom layer (the reciprocal of the scale).
- * 
- * @param xTiles Number of horizontal 256 pixel tiles
- * @param yTiles Number of vertical 256 pixel tiles
- * @param scale Zoom factor of this level
- * @param downsample Reciprocal zoom factor relative to most zoomed layer (one at highest objective layer)
  */
 struct LayerExtent {
+    /// @brief Number of horizontal 256 pixel tiles
     uint32_t            xTiles      = 1; 
+    /// @brief Number of vertical 256 pixel tiles
     uint32_t            yTiles      = 1; 
+    /// @brief How magnified this level is relative to the unmagnified size of the tissue
     float               scale       = 1.f;
+    /// @brief Reciprocal scale factor relative to the most zoomed level (for OpenSlide compatibility)
     float               downsample  = 1.f;
 };
 using LayerExtents = std::vector<LayerExtent>;
@@ -210,14 +212,13 @@ using LayerExtents = std::vector<LayerExtent>;
  * @brief The extent, in pixels, of a whole side image file. 
  * 
  * These are in terms of the initial layer presented (most zoomed out layer).
- * 
- * @param width Base layer width extent in pixels
- * @param height Base layer height extent in pixels
- * @param layers Slide objective layer extent list
  */
 struct Extent {
+    /// @brief Top (lowest power) layer width extent in screen pixels
     uint32_t            width       = 1; 
+    /// @brief Top (lowest power) layer height in screen pixels
     uint32_t            height      = 1; 
+    /// @brief Slide objective layer extent list
     LayerExtents        layers; 
 };
 /**
@@ -227,10 +228,15 @@ struct Extent {
  * pixel and bit-ordering. 
  */
 enum Format {
+    /// @brief Invalid format indicating a format was not selected
     FORMAT_UNDEFINED,
+    /// @brief 8-bit blue, 8-bit green, 8-bit red, no alpha
     FORMAT_B8G8R8,
+    /// @brief 8-bit red, 8-bit green, 8-bit blue, no alpha
     FORMAT_R8G8B8,
+    /// @brief 8-bit blue, 8-bit green, 8-bit red, 8-bit alpha
     FORMAT_B8G8R8A8,
+    /// @brief 8-bit red, 8-bit green, 8-bit blue, 8-bit alpha
     FORMAT_R8G8B8A8,
 };
 /**
@@ -251,9 +257,9 @@ struct LocalSlideOpenInfo {
      * 
      */
     enum : uint8_t {
-        SLIDE_TYPE_UNKNOWN,         // Unknown file encoding
-        SLIDE_TYPE_IRIS,            // Iris Codec File
-        SLIDE_TYPE_OPENSLIDE,       // Vendor specific file (ex SVS)
+        SLIDE_TYPE_UNKNOWN,         //< Unknown file encoding
+        SLIDE_TYPE_IRIS,            //< Iris Codec File
+        SLIDE_TYPE_OPENSLIDE,       //< Vendor specific file (ex SVS)
     }                   type        = SLIDE_TYPE_UNKNOWN;
     
 };
@@ -292,42 +298,30 @@ struct SlideOpenInfo {
         SLIDE_OPEN_NETWORK,             // Sever hosted slide file
     }                   type            = SLIDE_OPEN_UNDEFINED;
     union {
+    /**
+     * @brief Information for opening a file on the local machine
+     */
     LocalSlideOpenInfo   local;
+    /**
+     * @brief Information for opening a network hosted file
+     */
     NetworkSlideOpenInfo network;
     };
     // ~~~~~~~~~~~~~ OPTIONAL FEATURES ~~~~~~~~~~~~~~~ //
     /**
-     * @brief This is the default slide cache capacity.
-     * 
-     * It determines the number of allowed cached tiles.
-     * This value directly affects the slides' RAM usage.
-     * *The default value of 1000 tiles consumes ~2 GB.*
+     * @brief This is the default slide cache capacity
+     *
+     * The capacity determines the number of allowed cached tiles.
+     * This is the primary way in which Iris consumes RAM.
+     * Greater values cache more in-memory decompressed tile data
+     * for greater performance. Less require more pulls from
+     * disk (which is slower)
+     * The default 1000 for RGBA images consumes 2 GB of RAM.
      */
     size_t               capacity       = 1000;
-    /**
-     * @brief Advanced efficiency feature to avoid loading
-     * stale / irrelevant tiles. 
-     * 
-     * Reference the current high-resolution layer atomic index.
-     * The slide will ignore any prior load requests that are not the
-     * high or low (HR-1) resolution layers.
-     * \note Configured by Iris Render Engine and thus requires 
-     * Iris::viewer_open_slide(const Viewer&, const SlideOpenInfo&)
-     */
-    atomic_uint32*       HR_index_ptr   = nullptr;
-    /**
-     * @brief Advanced efficiency feature. Notifies once a tile
-     * has been loaded into the slide tile cache and is
-     * ready for use. Useful for updating the view via
-     * informing a buffering thread that new data is available.
-     * \note Configured by Iris Render Engine and thus requires 
-     * Iris::viewer_open_slide(const Viewer&, const SlideOpenInfo&)
-     */
-    Notification*        notification   = nullptr;
 };
-
-typedef std::shared_ptr<class  __INTERNAL__Buffer> Buffer;
-
+using LambdaPtr         = std::function<void()>;
+using LambdaPtrs        = std::vector<LambdaPtr>;
 } // END IRIS NAMESPACE
 
 #endif /* IrisTypes_h */

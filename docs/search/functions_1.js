@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['copy_5fstrong_5fbuffer_5ffrom_5fdata_0',['Copy_strong_buffer_from_data',['../_iris_core_8hpp.html#ae6b0ccbc3906ea39f01d1c1f2ed9d16a',1,'Iris']]],
-  ['create_5fslide_1',['create_slide',['../_iris_core_8hpp.html#a19d46070f84a1242547a549836c56413',1,'Iris']]],
-  ['create_5fstrong_5fbuffer_2',['Create_strong_buffer',['../_iris_core_8hpp.html#a44646ec34970b5181fe4c1008ac2fa85',1,'Iris::Create_strong_buffer()'],['../_iris_core_8hpp.html#ad1597d72ba0a3847f27c0f0c38d09314',1,'Iris::Create_strong_buffer(size_t buffer_size_in_bytes)']]],
-  ['create_5fviewer_3',['create_viewer',['../_iris_core_8hpp.html#a4595892bbfee049c291156616c186098',1,'Iris']]]
+  ['buffer_5fchange_5fstrength_0',['Buffer_change_strength',['../_iris_core_8hpp.html#a8c886088a1da9a3359c8223aa4c69465',1,'Iris']]],
+  ['buffer_5fget_5fdata_1',['Buffer_get_data',['../_iris_core_8hpp.html#a733e4983093597af049441169d1cb040',1,'Iris']]],
+  ['buffer_5fwrite_5finto_5fbuffer_2',['Buffer_write_into_buffer',['../_iris_core_8hpp.html#a0738d423fa6f0818e918fdd17c1072ff',1,'Iris']]]
 ];

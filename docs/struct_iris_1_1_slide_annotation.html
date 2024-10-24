@@ -105,37 +105,32 @@ $(function(){ initResizable(false); });
 Public Attributes</h2></td></tr>
 <tr class="memitem:acb4dcb631f002e3c5269138c6b358f12" id="r_acb4dcb631f002e3c5269138c6b358f12"><td class="memItemLeft" align="right" valign="top"><a id="acb4dcb631f002e3c5269138c6b358f12" name="acb4dcb631f002e3c5269138c6b358f12"></a>
 <a class="el" href="iris_types_8hpp.html#aa615db5c6f1ac132a038a85b2197b78d">AnnotationFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>format</b> = ANNOTATION_FORMAT_UNDEFINED</td></tr>
+<tr class="memdesc:acb4dcb631f002e3c5269138c6b358f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">AnnotationFormat of the image data to be rendered. <br /></td></tr>
 <tr class="separator:acb4dcb631f002e3c5269138c6b358f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b454ea3805b7c4bb8371e5f187fc9e1" id="r_a7b454ea3805b7c4bb8371e5f187fc9e1"><td class="memItemLeft" align="right" valign="top"><a id="a7b454ea3805b7c4bb8371e5f187fc9e1" name="a7b454ea3805b7c4bb8371e5f187fc9e1"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>x_offset</b> = 0.f</td></tr>
+<tr class="memdesc:a7b454ea3805b7c4bb8371e5f187fc9e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">x-offset of the current scope view window where the image starts [0,1.f] <br /></td></tr>
 <tr class="separator:a7b454ea3805b7c4bb8371e5f187fc9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8b0e25b371b4ea80bdd398d3a598d1e" id="r_af8b0e25b371b4ea80bdd398d3a598d1e"><td class="memItemLeft" align="right" valign="top"><a id="af8b0e25b371b4ea80bdd398d3a598d1e" name="af8b0e25b371b4ea80bdd398d3a598d1e"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>y_offset</b> = 0.f</td></tr>
+<tr class="memdesc:af8b0e25b371b4ea80bdd398d3a598d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">y-offset of the current scope view window where the image starts [0,1.f] <br /></td></tr>
 <tr class="separator:af8b0e25b371b4ea80bdd398d3a598d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addc686e70e62e81d400aa3f42570d01a" id="r_addc686e70e62e81d400aa3f42570d01a"><td class="memItemLeft" align="right" valign="top"><a id="addc686e70e62e81d400aa3f42570d01a" name="addc686e70e62e81d400aa3f42570d01a"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>width</b> = 0.f</td></tr>
+<tr class="memdesc:addc686e70e62e81d400aa3f42570d01a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of horizontal (x) pixels in the image annotation. <br /></td></tr>
 <tr class="separator:addc686e70e62e81d400aa3f42570d01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fea4f4a1a94261df88d77b80fd0abe2" id="r_a1fea4f4a1a94261df88d77b80fd0abe2"><td class="memItemLeft" align="right" valign="top"><a id="a1fea4f4a1a94261df88d77b80fd0abe2" name="a1fea4f4a1a94261df88d77b80fd0abe2"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>height</b> = 0.f</td></tr>
+<tr class="memdesc:a1fea4f4a1a94261df88d77b80fd0abe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of vertical (y) pixels in the image annotation. <br /></td></tr>
 <tr class="separator:a1fea4f4a1a94261df88d77b80fd0abe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a248567482b1d64189b9ec70749cd94f0" id="r_a248567482b1d64189b9ec70749cd94f0"><td class="memItemLeft" align="right" valign="top"><a id="a248567482b1d64189b9ec70749cd94f0" name="a248567482b1d64189b9ec70749cd94f0"></a>
-<a class="el" href="iris_types_8hpp.html#a0c308c69a093bed08381d0aead470fd9">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<a class="el" href="iris_types_8hpp.html#adc36484999fa88ffb63a27a03ac932ec">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="memdesc:a248567482b1d64189b9ec70749cd94f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encoded pixel data that comprises the image, width wide and hight tall. <br /></td></tr>
 <tr class="separator:a248567482b1d64189b9ec70749cd94f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure defining requirements to create an image-based slide annotation. </p>
-<p>The required information includes the location of the slide annotation on the slide and the size of the annotation. The offset locations are fractions of the current view window (for example an annotation that starts in the middle of the current view would have an offset of 0.5) The engine will immediately begin rendering the image on top of the rendered slide layers.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">format</td><td>the AnnotationFormat of the image data to be rendered </td></tr>
-    <tr><td class="paramname">x_offset</td><td>the x_offset of the current scope view window where the image starts [0,1.f] </td></tr>
-    <tr><td class="paramname">y_offset</td><td>the x_offset of the current scope view window where the image starts [0,1.f] </td></tr>
-    <tr><td class="paramname">width</td><td>the number of horizontal pixels in the image annotation </td></tr>
-    <tr><td class="paramname">height</td><td>the number of vertical pixels in the image annotation </td></tr>
-    <tr><td class="paramname">data</td><td>the encoded pixel data that comprises the image, width wide and hight tall </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>The required information includes the location of the slide annotation on the slide and the size of the annotation. The offset locations are fractions of the current view window (for example an annotation that starts in the middle of the current view would have an offset of 0.5) The engine will immediately begin rendering the image on top of the rendered slide layers. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/<a class="el" href="iris_types_8hpp_source.html">IrisTypes.hpp</a></li>
 </ul>

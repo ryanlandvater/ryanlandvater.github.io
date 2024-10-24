@@ -105,24 +105,21 @@ $(function(){ initResizable(false); });
 Public Attributes</h2></td></tr>
 <tr class="memitem:a638d91164522351d256f010d428ddb06" id="r_a638d91164522351d256f010d428ddb06"><td class="memItemLeft" align="right" valign="top"><a id="a638d91164522351d256f010d428ddb06" name="a638d91164522351d256f010d428ddb06"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>ApplicationName</b></td></tr>
+<tr class="memdesc:a638d91164522351d256f010d428ddb06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informs the rendering engine of the calling application's name. <br /></td></tr>
 <tr class="separator:a638d91164522351d256f010d428ddb06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90d4c5e4027bdda9f3a684abc936c601" id="r_a90d4c5e4027bdda9f3a684abc936c601"><td class="memItemLeft" align="right" valign="top"><a id="a90d4c5e4027bdda9f3a684abc936c601" name="a90d4c5e4027bdda9f3a684abc936c601"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ApplicationVersion</b></td></tr>
+<tr class="memdesc:a90d4c5e4027bdda9f3a684abc936c601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informs the engine of the calling application version. <br /></td></tr>
 <tr class="separator:a90d4c5e4027bdda9f3a684abc936c601"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf08c027f9829c08b02251b163cfa84c" id="r_aaf08c027f9829c08b02251b163cfa84c"><td class="memItemLeft" align="right" valign="top"><a id="aaf08c027f9829c08b02251b163cfa84c" name="aaf08c027f9829c08b02251b163cfa84c"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>ApplicationBundlePath</b></td></tr>
+<tr class="memdesc:aaf08c027f9829c08b02251b163cfa84c"><td class="mdescLeft">&#160;</td><td class="mdescRight">provides the executable location. This is needed for runtime loading of application files such as UI markup files and shader code. <br /></td></tr>
 <tr class="separator:aaf08c027f9829c08b02251b163cfa84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines necesary runtime parameters for starting the Iris rendering engine. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ApplicationName</td><td>informs the rendering engine of the calling application's name </td></tr>
-    <tr><td class="paramname">ApplicationVersion</td><td>informs the engine of the calling application version </td></tr>
-    <tr><td class="paramname">ApplicationBundlePath</td><td>provides the executable location. This is needed for runtime loading of application files such as UI markup files and shader code. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>These runtime parameters will be forwarded to the GPU for certain task tracking and the application bundle path (term from Apple's OS) is important for loading referenced / included runtime files.</p>
+<p>Additional runtime parameters will be added as needed in the future. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/<a class="el" href="iris_types_8hpp_source.html">IrisTypes.hpp</a></li>
 </ul>

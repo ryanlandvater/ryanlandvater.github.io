@@ -106,30 +106,25 @@ $(function(){ initResizable(false); });
 Public Attributes</h2></td></tr>
 <tr class="memitem:acdfdc6460239a00d8091c96594de4d49" id="r_acdfdc6460239a00d8091c96594de4d49"><td class="memItemLeft" align="right" valign="top"><a id="acdfdc6460239a00d8091c96594de4d49" name="acdfdc6460239a00d8091c96594de4d49"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>xTiles</b> = 1</td></tr>
+<tr class="memdesc:acdfdc6460239a00d8091c96594de4d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of horizontal 256 pixel tiles. <br /></td></tr>
 <tr class="separator:acdfdc6460239a00d8091c96594de4d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1cce5d319ff97bca43424e25e84470d" id="r_af1cce5d319ff97bca43424e25e84470d"><td class="memItemLeft" align="right" valign="top"><a id="af1cce5d319ff97bca43424e25e84470d" name="af1cce5d319ff97bca43424e25e84470d"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>yTiles</b> = 1</td></tr>
+<tr class="memdesc:af1cce5d319ff97bca43424e25e84470d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of vertical 256 pixel tiles. <br /></td></tr>
 <tr class="separator:af1cce5d319ff97bca43424e25e84470d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a66bc71d5242a50d8b71730ab9fb432" id="r_a1a66bc71d5242a50d8b71730ab9fb432"><td class="memItemLeft" align="right" valign="top"><a id="a1a66bc71d5242a50d8b71730ab9fb432" name="a1a66bc71d5242a50d8b71730ab9fb432"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>scale</b> = 1.f</td></tr>
+<tr class="memdesc:a1a66bc71d5242a50d8b71730ab9fb432"><td class="mdescLeft">&#160;</td><td class="mdescRight">How magnified this level is relative to the unmagnified size of the tissue. <br /></td></tr>
 <tr class="separator:a1a66bc71d5242a50d8b71730ab9fb432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66f602214f66c65fda4d66aee91a08f8" id="r_a66f602214f66c65fda4d66aee91a08f8"><td class="memItemLeft" align="right" valign="top"><a id="a66f602214f66c65fda4d66aee91a08f8" name="a66f602214f66c65fda4d66aee91a08f8"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>downsample</b> = 1.f</td></tr>
+<tr class="memdesc:a66f602214f66c65fda4d66aee91a08f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reciprocal scale factor relative to the most zoomed level (for OpenSlide compatibility) <br /></td></tr>
 <tr class="separator:a66f602214f66c65fda4d66aee91a08f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Slide objective layer extent detailing the extent of each objective layer in the number of 256 pixel tiles in each dimension. <br  />
  </p>
-<p>The relative scale (zoom amount) as well as how downsampled the layer is relative to the highest zoom layer (the reciprocal of the scale).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">xTiles</td><td>Number of horizontal 256 pixel tiles </td></tr>
-    <tr><td class="paramname">yTiles</td><td>Number of vertical 256 pixel tiles </td></tr>
-    <tr><td class="paramname">scale</td><td>Zoom factor of this level </td></tr>
-    <tr><td class="paramname">downsample</td><td>Reciprocal zoom factor relative to most zoomed layer (one at highest objective layer) </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>The relative scale (zoom amount) as well as how downsampled the layer is relative to the highest zoom layer (the reciprocal of the scale). </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/<a class="el" href="iris_types_8hpp_source.html">IrisTypes.hpp</a></li>
 </ul>

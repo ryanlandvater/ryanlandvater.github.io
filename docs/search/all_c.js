@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['programming_20interface_20api_0',['Iris Official Application Programming Interface (API)',['../index.html#autotoc_md0',1,'']]],
-  ['publications_1',['Publications',['../index.html#autotoc_md2',1,'']]]
+  ['network_0',['network',['../struct_iris_1_1_slide_open_info.html#a1de925b0da329e8f16c5d0306bd2da79',1,'Iris::SlideOpenInfo']]],
+  ['networkslideopeninfo_1',['NetworkSlideOpenInfo',['../struct_iris_1_1_network_slide_open_info.html',1,'Iris']]]
 ];
