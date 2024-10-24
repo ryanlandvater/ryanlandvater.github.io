@@ -25,7 +25,7 @@ namespace Iris {
  * are tracking if you have switched from weak to strong or vice versa.
  *
  * \warning Use of the __INTERNAL__Buffer is given as a courtesy for developers
- * for developers who want greater efficiency and control over datablocks. These methods
+ * who want greater efficiency and control over datablocks. These methods
  * were created for the internal use by Iris Developers and come with some inherant risk.
  *
  * \warning __INTERNAL__Buffer is currently NOT thread safe. This will be fixed
@@ -107,7 +107,7 @@ public:
      * wish to expand the size as well, see append(). 
      * \sa append()
      * 
-     * \warning This may invalidate the data() pointer. Any local variables that
+     * \warning this may invalidate any prior reference to the data() pointer. Any local variables that
      * reference the data within this buffer may become immediately invalid. You may check
      * if resize changed the buffer by evaluating a comparison between data() before calling
      * and data() after calling.
@@ -125,7 +125,7 @@ public:
      * beyond available_bytes(), the data-block will be expanded similarly to prepare(size_t).
      * \sa prepare(size_t), available_bytes()
      * 
-     * \warning This may invalidate the data() pointer. Any local variables that
+     * \warning this may invalidate any prior reference to the data() pointer. Any local variables that
      * reference the data within this buffer may become immediately invalid. You may check
      * if resize changed the buffer by evaluating a comparison between data() before calling
      * and data() after calling.
@@ -139,6 +139,11 @@ public:
      * 
      * This works similarly to append(size_t) but performs a copy transaction, copying
      * the C-style array into the end of the current block.
+     * 
+     * \warning this may invalidate any prior reference to the data() pointer. Any local variables that
+     * reference the data within this buffer may become immediately invalid. You may check
+     * if resize changed the buffer by evaluating a comparison between data() before calling
+     * and data() after calling.
      * 
      * @param data C-style pointer to data array
      * @param size Size of data in bytes
@@ -193,7 +198,7 @@ public:
      * changes the size of the backing data block by the kernel. Calling this method
      * can invalidate the underlying data pointer.
      * \note You should use prepare() 
-     * \warning This may invalidate the data() pointer. Any local variables that
+     * \warning this may invalidate any prior reference to the data() pointer. Any local variables that
      * reference the data within this buffer may become immediately invalid. You may check
      * if resize changed the buffer by evaluating a comparison between data() before calling
      * and data() after calling.

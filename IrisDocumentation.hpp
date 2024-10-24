@@ -22,7 +22,7 @@
  * both a **types.hpp** (IrisTypes.hpp), containing the type definitions and API call info_structures, and 
  * the **module.hpp** header (IrisCore.hpp), which contain the methods required to implement the API.* 
  *  2. Link the Iris modules libraries to your application during program linking. *In order to gain access 
- * to the Iris runtime binaries, you must agree to the academic use license. You must contact the authors 
+ * to the Iris runtime binaries, you must agree to the academic use license. You must contact the [authors](mailto:ryanlandvater@gmail.com) 
  * of Iris for access.*
  *  3. Bind a drawable surface at runtime to allow Iris to configure graphics parameters. 
  * 

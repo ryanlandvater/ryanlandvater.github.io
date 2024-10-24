@@ -41,7 +41,9 @@ enum Result : uint32_t {
  * 
  */
 enum BufferReferenceStrength {
+    /// @brief Only wraps access to the data. No ownership or ability to resize underlying pointer.
     REFERENCE_WEAK      = 0,
+    /// @brief Full ownership. Will free data on buffer destruction. Can resize underlying pointer.
     REFERENCE_STRONG    = 1,
 };
 /**
@@ -67,8 +69,11 @@ using Buffer = std::shared_ptr<class __INTERNAL__Buffer>;
  * The viewer the the primary control class that interfaces between external
  * applications and their views, and the iris rendering system. It contains interface
  * capabilities between external controllers, coordinates display presentations between
- * external surfaces, and creates any user interface functionalities defined in user
- * interface markup strctures.
+ * external surfaces, and creates any user interface functionalities. It is created using
+ * the Iris::create_viewer(const Iris::ViewerCreateInfo&) method and initialized using
+ * the Iris::viewer_bind_external_surface(const Iris::ViewerBindExternalSurfaceInfo&) method.
+ * \sa ViewerCreateInfo and ViewerBindExternalSurfaceInfo
+ * 
  * \note __INTERNAL__Viewer is an internally defined class and not externally exposed.
  */
 using Viewer = std::shared_ptr <class __INTERNAL__Viewer>;

@@ -165,8 +165,8 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a25c2bd8a6f2445b1fd03387ea47c2b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result flags returned by Iris as part of API calls. <br /></td></tr>
 <tr class="separator:a25c2bd8a6f2445b1fd03387ea47c2b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab7511ac29e04c5795cfc28bffb559af" id="r_aab7511ac29e04c5795cfc28bffb559af"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab7511ac29e04c5795cfc28bffb559af">Iris::BufferReferenceStrength</a> { <b>REFERENCE_WEAK</b> = 0
-, <b>REFERENCE_STRONG</b> = 1
+<tr class="memitem:aab7511ac29e04c5795cfc28bffb559af" id="r_aab7511ac29e04c5795cfc28bffb559af"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab7511ac29e04c5795cfc28bffb559af">Iris::BufferReferenceStrength</a> { <a class="el" href="#aab7511ac29e04c5795cfc28bffb559afa851c2757d998454623fded498c462a41">Iris::REFERENCE_WEAK</a> = 0
+, <a class="el" href="#aab7511ac29e04c5795cfc28bffb559afa8bcdfb35527ba55ef2a39433ff543860">Iris::REFERENCE_STRONG</a> = 1
  }</td></tr>
 <tr class="memdesc:aab7511ac29e04c5795cfc28bffb559af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iris Buffer ownership strength to underlying data. A weak reference only wraps data blocks by reference but has no responsibility over the creation or freeing of that datablock. Strong references have responsibility over the data backing the buffer and will free the memory on buffer destruction.  <a href="#aab7511ac29e04c5795cfc28bffb559af">More...</a><br /></td></tr>
 <tr class="separator:aab7511ac29e04c5795cfc28bffb559af"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -249,7 +249,8 @@ ALL LOCAL variables SHALL use lower-case snake_case </dd></dl>
 </div><div class="memdoc">
 
 <p>Access point to Iris API and controls all elements of Iris viewspace. </p>
-<p>The viewer the the primary control class that interfaces between external applications and their views, and the iris rendering system. It contains interface capabilities between external controllers, coordinates display presentations between external surfaces, and creates any user interface functionalities defined in user interface markup strctures. </p><dl class="section note"><dt>Note</dt><dd>__INTERNAL__Viewer is an internally defined class and not externally exposed. </dd></dl>
+<p>The viewer the the primary control class that interfaces between external applications and their views, and the iris rendering system. It contains interface capabilities between external controllers, coordinates display presentations between external surfaces, and creates any user interface functionalities. It is created using the <a class="el" href="iris_core_8hpp.html#a873a2e0b411e964da5812745bb6a31ad" title="Create an Iris viewer instance.">Iris::create_viewer(const Iris::ViewerCreateInfo&amp;)</a> method and initialized using the <a class="el" href="iris_core_8hpp.html#a5d359dcbea415e4bd01dc39cd5a36429" title="Bind a viewer to an external surface controlled by the calling application.">Iris::viewer_bind_external_surface(const Iris::ViewerBindExternalSurfaceInfo&amp;)</a> method. </p><dl class="section see"><dt>See also</dt><dd>ViewerCreateInfo and ViewerBindExternalSurfaceInfo</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>__INTERNAL__Viewer is an internally defined class and not externally exposed. </dd></dl>
 
 </div>
 </div>
@@ -269,6 +270,12 @@ ALL LOCAL variables SHALL use lower-case snake_case </dd></dl>
 <p>Iris Buffer ownership strength to underlying data. A weak reference only wraps data blocks by reference but has no responsibility over the creation or freeing of that datablock. Strong references have responsibility over the data backing the buffer and will free the memory on buffer destruction. </p>
 <dl class="section note"><dt>Note</dt><dd>A weak buffer explicitly is forbidden from resizing the buffer as it <em>may</em> invalidate the original pointer. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Changing a strong to weak buffer <b>requires</b> the calling program take responsibility for the buffer data pointer. It is now that program's responsibility to free that data once finished or a memory leak will ensue. </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aab7511ac29e04c5795cfc28bffb559afa851c2757d998454623fded498c462a41" name="aab7511ac29e04c5795cfc28bffb559afa851c2757d998454623fded498c462a41"></a>REFERENCE_WEAK&#160;</td><td class="fielddoc"><p>Only wraps access to the data. No ownership or ability to resize underlying pointer. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aab7511ac29e04c5795cfc28bffb559afa8bcdfb35527ba55ef2a39433ff543860" name="aab7511ac29e04c5795cfc28bffb559afa8bcdfb35527ba55ef2a39433ff543860"></a>REFERENCE_STRONG&#160;</td><td class="fielddoc"><p>Full ownership. Will free data on buffer destruction. Can resize underlying pointer. </p>
+</td></tr>
+</table>
 
 </div>
 </div>
